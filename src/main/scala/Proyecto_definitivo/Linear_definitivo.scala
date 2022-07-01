@@ -48,7 +48,12 @@ object Linear_definitivo {
     val model = pipeline.fit(df1)
 
     val lrModel = model.stages(1).asInstanceOf[LinearRegressionModel]
-    println(s"RMSE:   ${lrModel.summary.rootMeanSquaredError}")
-    println(s"r2:     ${lrModel.summary.r2}")
+    val RMSE = lrModel.summary.rootMeanSquaredError
+    val r2 = lrModel.summary.r2
+
+    println(s"RMSE:   $RMSE")
+    println(s"r2:     $r2")
+
+
   }
 }
